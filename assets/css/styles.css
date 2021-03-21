@@ -11,22 +11,27 @@
 /* Element selectors */
 html, body{
     height: 100%;
+    min-width: 320px;
     font-family: Lato, Arial, Helvetica, sans-serif;
     font-weight: normal;
     color: var(--dark);
 }
 
-h1, h2, h3 {
-    font-weight: normal;
-}
-
-h1, h2{
-    padding-left: 2%;
+body{
+    padding: 3%;
 }
 
 header, nav ul, .about-content {
     display: flex;
-    padding: 2%;
+}
+
+header, main, footer{
+    padding-bottom: 2%;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav{
@@ -35,24 +40,30 @@ nav{
 
 nav ul {
     justify-content: flex-end;
-    align-items: center;
 }
 
-header{
-    justify-content: space-between;
+h1, h2, h3 {
+    font-weight: normal;
 }
 
-header h1{
-    font-size: 2rem;
+h2 {
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: 2.3rem;
+    color: var(--light);
 }
 
 h2{
     font-size: 1.5rem;
+    padding-bottom: 2%;
 }
 
 h3{
+    color: var(--light);
     font-size: 1.1rem;
-    border-bottom: 1px solid var(--color2);
+    border-bottom: 1px solid var(--light);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
@@ -64,60 +75,60 @@ a, a:hover, a:active, a:focus{
     transition: all 0.5s ease-in-out;
 }
 
+a:hover, a:active, a:focus{
+    text-decoration: underline;
+}
+
 nav{
     flex-shrink: 0;
 }
 
 nav li{
-    margin-right: 3%;
     padding: 1%;
-}
-
-nav li:first-child a, .accent1{
-    color: var(--color1);
-}
-
-nav li:nth-child(2) a, .accent2, h3{
-    color: var(--color2);
-}
-
-nav li:nth-child(3) a, .accent3{
-    color: var(--color3);
+    justify-self: center;
+    font-size: 1.1rem;
 }
 
 footer p{
       font-size: .9rem;
       text-align: right;
-      padding: 10px;
+}
+
+p {
+    line-height: 1.4;
 }
 
 article{
     display: flex;
-    padding: 2%;
     justify-content: space-between;
 }
 
-article div{
-    padding: 5px 20px 5px 5px;
+article, article div, section{
+    padding: 1% 0;
 }
 
 article a{
     display: block;
-    padding-top: 10px;
+    padding-top: 1%;
+}
+
+article img{
+    margin: 0 0 30px 30px;
 }
 
 /* Class selectors */
-.bold{
-    font-weight: 700;
-}
-
 .light, .bi{
     color: var(--light);
 }
 
-.about-content div{
+.about-content p{
     padding-right: 2%;
 }
+
+.about-content img{
+    padding: 0 0 30px 30px;
+}
+
 .articles, .contacts, .contacts div{
     display: flex;
     flex-wrap: wrap;
@@ -125,25 +136,29 @@ article a{
 
 .articles article:first-child{
     flex: 1 0 100%;
+    padding-top: 0;
 }
 
 .articles article:nth-child(n+2){
     flex: 1 0 50%;
 }
 
+.articles article:nth-child(2){
+    padding-right: 10px;
+}
+
+.articles article:nth-child(3){
+    padding-left: 10px;
+}
+
 .contacts {
-    margin: 0 15px;
+    justify-content: space-evenly;
 }
 
 .contacts div{
     flex: 1 0 calc(25% - 20px);
-    align-content: center;
-    border-radius: 6px;
-    border: 1px solid var(--light);
     flex-wrap: nowrap;
     align-items: center;
-    padding: 5px 20px;
-    margin: 10px;
 }
 
 .contacts a{
@@ -151,28 +166,19 @@ article a{
     font-size: 1.1rem;
 }
 
-.decorative-header{
-    background: repeating-linear-gradient(
--45deg
-, #fff, #fff 8px, #F4F6F8 8px, #F4F6F8 16px);
-    background-size: 180px 180px;
-    font-family: "Berkshire Swash", cursive;
-    color: var(--light);
-    text-align: center;
-    font-size: 4rem;
-    line-height: 1.1;
-}
-
 /* Media queries */
-@media screen and (max-width: 992px) {
-    .contacts div{
-        flex: 1 0 calc(50% - 20px);
-    }
-}
-
 @media screen and (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+
   header, nav ul, .contacts {
     flex-direction: column;
+  }
+
+  nav li {
+      text-align: center;
+      padding: 6%;
   }
 
   footer p{
@@ -184,5 +190,17 @@ article a{
 
     .articles article:nth-child(n+2){
         flex: 1 0 100%;
+    }
+
+    article:nth-child(2) img{
+        margin-right: 0;
+    }
+
+    .articles article:nth-child(2){
+        padding-right: 0;
+    }
+
+    .articles article:nth-child(3){
+        padding-left: 0;
     }
 }
