@@ -3,36 +3,38 @@
 --accent-dark: rgb(175, 3, 89, .7);
 --links: rgb(3, 129, 175);
 --accent: rgb(175, 3, 89);
---light: #999;
+--light: rgba(0, 0, 0, 0.6);
 }
 /* Element selectors */
-html, body{
-    height: 100%;
+html, body {
     min-width: 320px;
     font-family: Lato, Arial, Helvetica, sans-serif;
     font-weight: normal;
     color: var(--dark);
 }
 
-body{
+body {
     padding: 3%;
+    background: rgba(126, 3, 175,0.2);
+background: linear-gradient(180deg, rgba(145, 117, 156, 0.2) 0%, rgba(145, 117, 156,0.1) 100%)no-repeat center center fixed;
+  background-size: cover;
 }
 
 header, nav ul, .about-content {
     display: flex;
 }
 
-header, main, footer{
+header {
     padding-bottom: 2%;
 }
 
-header{
+header {
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-nav{
+nav {
     flex: 1 0 0;
 }
 
@@ -44,123 +46,159 @@ h1, h3 {
     font-weight: normal;
 }
 
-h1{
-    font-size: 1.7rem;
+h1 {
+    font-size: 2rem;
     color: var(--accent-dark);
+    font-weight: 700;
 }
 
-h2{
+h2 {
     color: var(--light);
-    font-size: 1.5rem;
-    padding-bottom: 2%;
+    font-size: 1.6rem;
+    padding: 3% 0 5% 0;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-h3{
+h3 {
     color: var(--accent-dark);
     font-size: 1.1rem;
-    border-bottom: 1px solid var(--accent-dark);
     padding-bottom: 10px;
-    margin-bottom: 10px;
 }
 
-a, a:hover, a:active, a:focus, a:visited{
+a, a:hover, a:active, a:focus, a:visited {
     color: var(--links);
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    
 }
 
-a:hover, a:active, a:focus{
+a:hover, a:active, a:focus {
+    color: var(--dark);
     text-decoration: underline;
+    transition: all 0.3s ease-in;
 }
 
-nav{
+nav {
     flex-shrink: 0;
 }
 
-nav li{
+nav li {
     padding: 1% 2%;
     justify-self: center;
     font-size: 1.1rem;
 }
 
-nav li:last-child{
+nav li:last-child {
     padding-right: 0;
 }
 
-footer p{
-      font-size: .9rem;
-      text-align: right;
+footer p {
+    font-size: .9rem;
+    text-align: right;
+    margin-top: 10px;
+}
+
+main .decorative-border:last-child {
+    margin-top: 30px;
 }
 
 p {
     line-height: 1.4;
 }
 
-article{
+article a {
+    display: block;
+    padding-top: 5%;
+}
+
+article a::after{
+    content: " >";
+    vertical-align: text-top;
+}
+
+article img {
+    margin: 0 0 30px 30px;
+    width: 50%;
+    height: 50%;
+    border: 4px solid var(--light);
+    border-radius: 4px;
+}
+
+/* Class selectors */
+.decorative-border, .articles h3::after {
+    height: 3px;
+    background: var(--light);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%, rgba(3,129,175,1) 50%, rgba(175,3,89,1) 100%)no-repeat center center fixed;
+    background-size: cover;
+    border-radius: 6px;
+}
+
+.articles h3::after{
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 10px 0 0 0;
+}
+
+.light {
+    color: var(--light);
+}
+
+.about-content p {
+    padding-right: 2%;
+}
+
+.about-content img {
+    margin: 0 0 30px 30px;
+    width: 60%;
+    height: 50%;
+    border: 4px solid var(--light);
+    border-radius: 4px;
+}
+
+.article-content {
     display: flex;
     justify-content: space-between;
 }
 
-article, article div, section{
+.article-content, .article-content p, section {
     padding: 1% 0;
 }
 
-article a{
-    display: block;
-    padding-top: 1%;
-}
-
-article img{
-    margin: 0 0 30px 30px;
-}
-
-/* Class selectors */
-.light{
-    color: var(--light);
-}
-
-.about-content p{
-    padding-right: 2%;
-}
-
-.about-content img{
-    padding: 0 0 30px 30px;
-}
-
-.articles, .contacts, .contacts div{
+.articles, .contacts, .contacts div {
     display: flex;
     flex-wrap: wrap;
 }
 
-.articles article:first-child{
+.articles article:first-child {
     flex: 1 0 100%;
     padding-top: 0;
 }
 
-.articles article:nth-child(n+2){
+.articles article:nth-child(n+2) {
     flex: 1 0 50%;
 }
 
-.articles article:nth-child(2){
+.articles article:nth-child(2) {
     padding-right: 10px;
 }
 
-.articles article:nth-child(3){
+.articles article:nth-child(3) {
     padding-left: 10px;
 }
 
 .contacts {
     justify-content: space-evenly;
+    margin-top: 1%;
 }
 
-.contacts button{
+.contacts button {
     flex: 1 0 calc(25% - 20px);
     flex-wrap: nowrap;
     align-items: center;
     font-size: 1.1rem;
+    line-height: 1.5;
     display: flex;
     padding: 5px;
     justify-content: center;
@@ -170,27 +208,27 @@ article img{
     border-radius: 6px;
 }
 
-.contacts button:hover{
+.contacts button:hover {
     transition: all 0.3s ease-in;
     background-color: var(--accent);
 }
 
-.contacts button, .contacts button > *{
+.contacts button, .contacts button > * {
     cursor: pointer;
 }
 
-.contacts svg, .contacts button{
+.contacts svg, .contacts button {
     margin-right: 20px;
 }
 
-.contacts button:last-child{
+.contacts button:last-child {
     margin-right: 0;
 }
 
 /* Media queries */
 @media screen and (max-width: 768px) {
     h1{
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     header, nav ul, .contacts {
@@ -200,29 +238,60 @@ article img{
     nav li {
         text-align: center;
         padding: 6%;
+        margin-top: 5px;
     }
 
-    footer p{
+    footer p {
         text-align: center;
     }
 
-    .contacts div{
-        flex: 1 0 calc(100% - 20px);
+    section {
+        padding-bottom: 3%;
     }
 
-    .articles article:nth-child(n+2){
-        flex: 1 0 100%;
+    h2 {
+        padding-bottom: 5%;
     }
 
-    article:nth-child(2) img{
+    article:nth-child(2) img {
         margin-right: 0;
     }
 
-    .articles article:nth-child(2){
+    .about-content, .article-content {
+        flex-direction: column;
+    }
+
+    .about-content p, .article-content p {
+        order: 2;
+    }
+
+    .about-content img, .article-content img {
+        width: 100%;
+        order: 1;
+        margin-left: 0;
+    }
+
+    .articles article:nth-child(n+2) {
+        flex: 1 0 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px dotted #ccc;
+    }
+
+    .articles article:nth-child(2) {
         padding-right: 0;
     }
 
-    .articles article:nth-child(3){
+    .articles article:nth-child(3) {
         padding-left: 0;
+    }
+
+    .contacts div {
+        flex: 1 0 calc(100% - 20px);
+    }
+
+    .contacts button {
+        margin-bottom: 2%;
+        margin-right: 0;
     }
 }
