@@ -115,6 +115,7 @@ article a {
 article a::after{
     content: " >";
     vertical-align: text-top;
+    line-height: 1.2;
 }
 
 article img {
@@ -195,13 +196,8 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
 
 .contacts button {
     flex: 1 0 calc(25% - 20px);
-    flex-wrap: nowrap;
-    align-items: center;
     font-size: 1.1rem;
-    line-height: 1.5;
-    display: flex;
     padding: 7px;
-    justify-content: center;
     background-color: var(--accent-dark);
     border: 1px solid var(--accent);
     color: #fff;
@@ -225,16 +221,10 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
     margin-right: 0;
 }
 
-.contacts button span{
-    flex: 0 0 50%;
-    text-align: left;
-}
-
-.contacts button span.svg{
-    text-align: right;
-    padding-right: 10px;
-    height: 24px;
-    flex-basis: calc(50% - 10px);
+.contacts button span, .contacts button svg{
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 2px;
 }
 
 /* Media queries */
