@@ -55,7 +55,7 @@ h1 {
 h2 {
     color: var(--light);
     font-size: 1.6rem;
-    padding: 3% 0 5% 0;
+    padding: 3% 0;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -96,7 +96,7 @@ nav li:last-child {
 footer p {
     font-size: .9rem;
     text-align: right;
-    margin-top: 10px;
+    margin-top: 2%;
 }
 
 main .decorative-border:last-child {
@@ -200,7 +200,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
     font-size: 1.1rem;
     line-height: 1.5;
     display: flex;
-    padding: 5px;
+    padding: 7px;
     justify-content: center;
     background-color: var(--accent-dark);
     border: 1px solid var(--accent);
@@ -217,12 +217,24 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
     cursor: pointer;
 }
 
-.contacts svg, .contacts button {
+.contacts button {
     margin-right: 20px;
 }
 
 .contacts button:last-child {
     margin-right: 0;
+}
+
+.contacts button span{
+    flex: 0 0 50%;
+    text-align: left;
+}
+
+.contacts button span.svg{
+    text-align: right;
+    padding-right: 10px;
+    height: 24px;
+    flex-basis: calc(50% - 10px);
 }
 
 /* Media queries */
