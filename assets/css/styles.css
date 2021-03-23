@@ -48,9 +48,11 @@ h1, h3 {
 }
 
 h1 {
-    font-size: 2rem;
-    color: var(--white);
+    font-size: 2.3rem;
+    letter-spacing: .5px;
+    color: var(--light);
     font-weight: 700;
+    font-family: 'Lobster Two', Times, serif;
 }
 
 h2 {
@@ -129,7 +131,7 @@ article img {
 
 /* Class selectors */
 .decorative-border, .articles h3::after {
-    height: 3px;
+    min-height: 3px;
     background: var(--light);
 background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--links) 100%)no-repeat center center fixed;
     background-size: cover;
@@ -139,7 +141,7 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
 .articles h3::after{
     content: '';
     display: block;
-    height: 2px;
+    min-height: 2px;
     margin: 10px 0 0 0;
 }
 
@@ -195,7 +197,7 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
     margin-top: 1%;
 }
 
-.contacts button {
+.contacts a.button {
     flex: 1 0 calc(25% - 20px);
     font-size: 1.1rem;
     padding: 7px;
@@ -203,31 +205,35 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
     border: 1px solid var(--accent-dark);
     color: var(--accent);
     border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.contacts button:hover {
+.contacts a.button:hover {
     transition: all 0.3s ease-in-out;
     color: var(--font);  
     background-color: var(--accent-dark);  
     border-color: var(--font);
+    text-decoration: none;
 }
 
-.contacts button, .contacts button > * {
+a.button, a.button span, a.button svg, a.button {
     cursor: pointer;
 }
 
-.contacts button {
+.contacts a.button {
     margin-right: 20px;
 }
 
-.contacts button:last-child {
+.contacts a.button:last-child {
     margin-right: 0;
 }
 
-.contacts button span, .contacts button svg{
+.contacts a.button span, .contacts a.button svg{
     vertical-align: middle;
     display: inline-block;
     padding-right: 2px;
+    cursor: pointer;
 }
 
 /* Media queries */
@@ -255,7 +261,7 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
     }
 
     h2 {
-        padding-bottom: 5%;
+        padding-bottom: 30px;
     }
 
     article:nth-child(2) img {
@@ -294,7 +300,7 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
         flex: 1 0 calc(100% - 20px);
     }
 
-    .contacts button {
+    .contacts a.button {
         margin-bottom: 2%;
         margin-right: 0;
     }
