@@ -280,7 +280,6 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
         flex: 1 0 100%;
         margin-top: 20px;
         padding-top: 20px;
-        border-top: 1px dotted #ccc;
     }
 
     .articles article:nth-child(2) {
