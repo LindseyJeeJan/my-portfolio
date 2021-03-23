@@ -286,6 +286,7 @@ a.button, a.button span, a.button svg, a.button {
     .about-content img, .article-content img {
         width: 100%;
         order: 1;
+        margin: 0;
     }
 
     .articles article:nth-child(n+2) {
