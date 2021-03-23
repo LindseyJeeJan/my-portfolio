@@ -1,22 +1,23 @@
 :root {
---dark: #333;
---accent-dark: rgb(175, 3, 89, .7);
---links: rgb(3, 129, 175);
---accent: rgb(175, 3, 89);
---light: rgba(0, 0, 0, 0.6);
+--white: #fff;
+--font: #E9BD43;
+--accent-dark: #2c3b4a;
+--links: rgb(3, 184, 250);
+--accent: #375980;
+--light: #f0f0f0;
 }
 /* Element selectors */
 html, body {
     min-width: 320px;
     font-family: Lato, Arial, Helvetica, sans-serif;
     font-weight: normal;
-    color: var(--dark);
+    color: var(--white);
 }
 
 body {
     padding: 3%;
     background: rgba(126, 3, 175,0.2);
-background: linear-gradient(180deg, rgba(145, 117, 156, 0.2) 0%, rgba(145, 117, 156,0.1) 100%)no-repeat center center fixed;
+background: linear-gradient(180deg, var(--accent-dark) 0%,var(--accent) 100%)no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -48,12 +49,12 @@ h1, h3 {
 
 h1 {
     font-size: 2rem;
-    color: var(--accent-dark);
+    color: var(--white);
     font-weight: 700;
 }
 
 h2 {
-    color: var(--light);
+    color: var(--white);
     font-size: 1.6rem;
     padding: 3% 0;
     font-weight: 600;
@@ -61,13 +62,13 @@ h2 {
 }
 
 h3 {
-    color: var(--accent-dark);
+    color: var(--links);
     font-size: 1.1rem;
     padding-bottom: 10px;
 }
 
 a, a:hover, a:active, a:focus, a:visited {
-    color: var(--links);
+    color: var(--font);
     text-decoration: none;
     cursor: pointer;
     
@@ -122,7 +123,7 @@ article img {
     margin: 0 0 30px 30px;
     width: 50%;
     height: 50%;
-    border: 4px solid var(--light);
+    border: 2px solid var(--font);
     border-radius: 4px;
 }
 
@@ -130,7 +131,7 @@ article img {
 .decorative-border, .articles h3::after {
     height: 3px;
     background: var(--light);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%, rgba(3,129,175,1) 50%, rgba(175,3,89,1) 100%)no-repeat center center fixed;
+background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--links) 100%)no-repeat center center fixed;
     background-size: cover;
     border-radius: 6px;
 }
@@ -138,7 +139,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
 .articles h3::after{
     content: '';
     display: block;
-    height: 1px;
+    height: 2px;
     margin: 10px 0 0 0;
 }
 
@@ -154,7 +155,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
     margin: 0 0 30px 30px;
     width: 60%;
     height: 50%;
-    border: 4px solid var(--light);
+    border: 2px solid var(--font);
     border-radius: 4px;
 }
 
@@ -198,15 +199,17 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(175,3,89,0.7) 0%,
     flex: 1 0 calc(25% - 20px);
     font-size: 1.1rem;
     padding: 7px;
-    background-color: var(--accent-dark);
-    border: 1px solid var(--accent);
-    color: #fff;
+    background-color: var(--font);
+    border: 1px solid var(--accent-dark);
+    color: var(--accent);
     border-radius: 6px;
 }
 
 .contacts button:hover {
-    transition: all 0.3s ease-in;
-    background-color: var(--accent);
+    transition: all 0.3s ease-in-out;
+    color: var(--font);  
+    background-color: var(--accent-dark);  
+    border-color: var(--font);
 }
 
 .contacts button, .contacts button > * {
