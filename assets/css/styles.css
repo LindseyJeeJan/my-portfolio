@@ -109,23 +109,26 @@ p {
     line-height: 1.4;
 }
 
-article a {
+article a.arrow-link {
     display: block;
     padding-top: 5%;
 }
 
-article a::after{
+article a.arrow-link::after{
     content: " >";
     vertical-align: text-top;
     line-height: 1.2;
 }
 
+a.img{
+    flex: 1 0 50%;
+}
+
 article img {
-    margin: 0 0 30px 30px;
-    width: 50%;
-    height: 50%;
+    width: 100%;
     border: 2px solid var(--font);
     border-radius: 4px;
+    cursor: pointer;
 }
 
 /* Class selectors */
@@ -165,8 +168,12 @@ background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--acc
     justify-content: space-between;
 }
 
-.article-content, .article-content p, section {
+.article-content, section {
     padding: 1% 0;
+}
+
+.article-content p {
+    padding: 1% 20px 1% 0;
 }
 
 .articles, .contacts, .contacts div {
@@ -273,12 +280,12 @@ a.button, a.button span, a.button svg, a.button {
 
     .about-content p, .article-content p {
         order: 2;
+        padding: 1% 0;
     }
 
     .about-content img, .article-content img {
         width: 100%;
         order: 1;
-        margin-left: 0;
     }
 
     .articles article:nth-child(n+2) {
