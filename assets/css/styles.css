@@ -1,9 +1,9 @@
 :root {
 --white: #fff;
 --font: #E9BD43;
---accent-dark: #2c3b4a;
---links: rgb(3, 184, 250);
---accent: #4d6886;
+--accent-dark: rgb(7,41,51)	;
+--links:  rgb(115,224,255);
+--accent: rgb(17,82,102	);
 --light: #f0f0f0;
 }
 /* Element selectors */
@@ -17,8 +17,8 @@ html, body {
 body {
     padding: 3%;
     background: rgba(126, 3, 175,0.2);
-background: linear-gradient(180deg, var(--accent-dark) 0%,var(--accent) 100%)no-repeat center center fixed;
-  background-size: cover;
+    background: linear-gradient(180deg, var(--accent-dark) 0%,var(--accent) 30%)no-repeat center center fixed;
+    background-size: cover;
 }
 
 header, nav ul, .about-content {
@@ -56,21 +56,20 @@ h1 {
 }
 
 h2 {
-    color: var(--white);
-    font-size: 1.6rem;
-    padding: 3% 0;
+    color: var(--font);
+    font-size: 2rem;
+    padding: 1.5% 0;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 h3 {
-    color: var(--links);
+    color: var(--font);
     font-size: 1.1rem;
     padding-bottom: 10px;
 }
 
 a, a:hover, a:active, a:focus, a:visited {
-    color: var(--font);
+    color: var(--links);
     text-decoration: none;
     cursor: pointer;
     
@@ -131,9 +130,9 @@ article img {
 
 /* Class selectors */
 .decorative-border, .articles h3::after {
-    min-height: 3px;
+    min-height: 1px;
     background: var(--light);
-background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--links) 100%)no-repeat center center fixed;
+background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--accent) 100%)no-repeat center center fixed;
     background-size: cover;
     border-radius: 6px;
 }
@@ -141,7 +140,7 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
 .articles h3::after{
     content: '';
     display: block;
-    min-height: 2px;
+    min-height: 1px;
     margin: 10px 0 0 0;
 }
 
@@ -201,19 +200,19 @@ background: linear-gradient(90deg, var(--links) 0%, var(--light) 50%, var(--link
     flex: 1 0 calc(25% - 20px);
     font-size: 1.1rem;
     padding: 7px;
-    background-color: var(--font);
-    border: 1px solid var(--accent-dark);
-    color: var(--accent);
+    color: var(--font);  
+    background-color: var(--accent-dark);  
+    border: 1px solid var(--font);
     border-radius: 6px;
     text-decoration: none;
     text-align: center;
 }
 
 .contacts a.button:hover {
-    transition: all 0.3s ease-in-out;
-    color: var(--font);  
-    background-color: var(--accent-dark);  
-    border-color: var(--font);
+    background-color: var(--font);
+    border-color: var(--accent-dark);
+    color: var(--accent);
+    transition: all 0.3s ease-in-out;   
     text-decoration: none;
 }
 
