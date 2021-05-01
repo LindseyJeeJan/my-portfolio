@@ -1,5 +1,5 @@
 Project description:
-
+Functional mockup for future portfolio single page website.
 
 Link to deployed application:
 https://lindseyjeejan.github.io/my-portfolio/
