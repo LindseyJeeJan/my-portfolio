@@ -76,7 +76,7 @@ a, a:hover, a:active, a:focus, a:visited {
 }
 
 a:hover, a:active, a:focus {
-    color: var(--dark);
+    color: var(--light);
     text-decoration: underline;
     transition: all 0.3s ease-in;
 }
@@ -99,6 +99,7 @@ footer p {
     font-size: .9rem;
     text-align: right;
     margin-top: 2%;
+    margin-bottom: 2px;
 }
 
 main .decorative-border:last-child {
@@ -127,7 +128,7 @@ a.img{
 article img {
     width: 100%;
     border: 2px solid var(--font);
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -157,10 +158,10 @@ background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--acc
 
 .about-content img {
     margin: 0 0 30px 30px;
-    width: 60%;
+    width: 40%;
     height: 50%;
     border: 2px solid var(--font);
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .article-content {
@@ -243,6 +244,10 @@ a.button, a.button span, a.button svg, a.button {
     cursor: pointer;
 }
 
+.clear-left {
+    clear: left;
+}
+
 /* Media queries */
 @media screen and (max-width: 768px) {
     h1{
@@ -291,7 +296,7 @@ a.button, a.button span, a.button svg, a.button {
     .about-content img, .article-content img {
         width: 100%;
         order: 1;
-        margin: 0;
+        margin: 15px 0;
     }
 
     .articles article:nth-child(n+2) {
