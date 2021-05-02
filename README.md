@@ -12,4 +12,3 @@ Desktop:
 
 Mobile:
 <img src="assets/images/mobile.png" width="300">
-
