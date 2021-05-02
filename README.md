@@ -1,5 +1,5 @@
 Project description:
-Functional mockup for future portfolio single page website.
+This is my professional portfolio. The page contains a brief message about who I am, and descriptions and links for several of my recent projects. The page also contains information to contact me.
 
 Link to deployed application:
 https://lindseyjeejan.github.io/my-portfolio/
