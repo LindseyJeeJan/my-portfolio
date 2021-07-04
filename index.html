@@ -7,45 +7,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lindsey Lauria - Web Developer</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
 <body>
   <header>
-    <h1>Lindsey Lauria
-    </h1>
-    <nav>
-      <ul>
-        <li><a href="#section-about">About</a></li>
-        <li><a href="#section-portfolio">Portfolio</a></li>
-        <li><a href="#section-contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/lindseyjjlauria/" target="_blank">LinkedIn</a></li>
-      </ul>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+      <a class="navbar-brand" href="#">Lindsey Lauria</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#section-about">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#section-portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#section-contact">Contact</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/lindseyjjlauria/">LinkedIn</a>
+          </li>
+        </ul>
+
+      </div>
     </nav>
   </header>
   <main>
-    <div class="decorative-border">
-
-    </div>
     <section id="section-about">
-      <h2>About</h2>
-      <h3>Web Designer &amp; Developer</h3>
-      <div class="about-content article-content">
 
-        <p>Hi, I'm Lindsey. I am a web developer and designer. Designing user interfaces and building clean, effective front end solutions is something I love to do. I enjoy creating, problem solving and learning new things.</p>
-        <img src="./assets/images/lindsey-lauria.jpg" alt="lindsey lauria headshot image">
-      </div>
+      <!-- <h3>Web Designer &amp; Developer</h3> -->
+      <h2>About</h2>
+      <article class="about-content p-3">
+        <h3 class="w-100">Web Designer &amp; Developer</h3>
+        <div class="article-content">
+          <p>Hi, I'm Lindsey. I am a web developer and designer. Designing user interfaces and building clean, effective front end solutions is something I love to do. I enjoy creating, problem solving and learning new things.</p>
+          <img src="./assets/images/lindsey-resized.png" alt="lindsey lauria headshot image">
+        </div>
+      </article>
     </section>
 
     <section id="section-portfolio">
       <h2>Portfolio</h2>
       <div class="articles">
         <article>
-          <h3>Study Buddy</h3><a href="https://github.com/LindseyJeeJan/project-one" target="_blank">Visit GitHub</a>
+          <div class="d-flex align-content-center justify-content-between">
+            <h3>Study Buddy</h3><a href="https://github.com/LindseyJeeJan/project-one" target="_blank">Visit GitHub</a>
+          </div>
           <div class="article-content">
             <p>The application provides the user with the ability to gather learning resources and coding solutions for various learning styles by connecting to StackExchange and YouTube APIs. The application provides 3 suggestions from each of the API resources. A Bookmarks feature helps the user to save their favorite content to local storage. This project uses Materialize and jQuery in addition to YouTube and StackExchange APIs.
               <a href="https://lindseyjeejan.github.io/project-one/" target="_blank" class="arrow-link">View demo</a>
@@ -56,7 +72,9 @@
           </div>
         </article>
         <article>
-          <h3>Weather Dashboard</h3><a href="https://github.com/LindseyJeeJan/weather-dashboard" target="_blank">Visit GitHub</a>
+          <div class="d-flex align-content-center justify-content-between">
+            <h3>Weather Dashboard</h3><a href="https://github.com/LindseyJeeJan/weather-dashboard" target="_blank">Visit GitHub</a>
+          </div>
           <div class="article-content">
             <p>Weather Dashboard uses the OpenWeather API to retrieve weather data. The user may search for a city retrieve the current weather in addition to a five day forecast for that city. The application saves a list of recently searched for cities to quickly retrieve tha weather data. This project uses Bootstrap, jQuery and Moment.js.
               <a href="https://lindseyjeejan.github.io/weather-dashboard/" target="_blank" class="arrow-link">View demo</a>
@@ -67,7 +85,9 @@
           </div>
         </article>
         <article>
-          <h3>Calendar Scheduler</h3><a href="https://github.com/LindseyJeeJan/calendar-scheduler" target="_blank">Visit GitHub</a>
+          <div class="d-flex align-content-center justify-content-between">
+            <h3>Calendar Scheduler</h3><a href="https://github.com/LindseyJeeJan/calendar-scheduler" target="_blank">Visit GitHub</a>
+          </div>
           <div class="article-content">
             <p>Simple calendar application that allows a user to save events for each hour of the day. This project uses Bootstrap, jQuery and Moment.js.
               <a href="https://lindseyjeejan.github.io/calendar-scheduler/" target="_blank" class="arrow-link">View demo</a>
@@ -82,7 +102,7 @@
 
     <section id="section-contact">
       <h2>Contact</h2>
-      <div class="contacts">
+      <article class="contacts">
         <a class="button" href="https://www.linkedin.com/in/lindseyjjlauria/" target="_blank">
           <span class="svg">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -115,18 +135,22 @@
           </span>
           <span>Email</span>
         </a>
-      </div>
+      </article>
     </section>
     <div class="decorative-border"></div>
   </main>
   <footer>
 
-    <p class="copyright light">
+    <p class="copyright">
       &copy; 2021 Lindsey Lauria
-    <div class="text-right">714-552-9511</div>
+      <span>&bullet; 714-552-9511</span>
     </p>
 
   </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

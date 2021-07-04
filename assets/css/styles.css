@@ -1,27 +1,38 @@
 :root {
 --white: #fff;
---font: #E9BD43;
---accent-dark: rgb(7,41,51)	;
---links:  rgb(115,224,255);
---accent: rgb(17,82,102	);
+--font: #212529;
+--accent-dark: #26254f;
+--links:  #4a4986;
+--accent: #26254f;
+--mid: rgba(0,0,0,.125);
 --light: #f0f0f0;
+--accent2: #da5a35;
+--accent3: #ff6c41;
 }
 /* Element selectors */
 html, body {
     min-width: 320px;
-    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: normal;
-    color: var(--white);
+    color: var(--font);
+    background-color: var(--light);
+}
+
+.navbar {
+    background-color: #f8f9fa!important;
+    background-image: url(../images/abstract-colorful-lines.jpeg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    box-shadow: 2px 1px 3px #666
 }
 
 body {
     padding: 3%;
-    background: rgba(126, 3, 175,0.2);
-    background: linear-gradient(180deg, var(--accent-dark) 0%,var(--accent) 30%)no-repeat center center fixed;
-    background-size: cover;
 }
 
-header, nav ul, .about-content {
+header, nav ul, .article-content {
     display: flex;
 }
 
@@ -37,6 +48,7 @@ header {
 
 nav {
     flex: 1 0 0;
+    font-weight: 300;
 }
 
 nav ul {
@@ -49,35 +61,38 @@ h1, h3 {
 
 h1 {
     font-size: 2.3rem;
-    letter-spacing: .5px;
     color: var(--light);
     font-weight: 700;
-    font-family: 'Lobster Two', Times, serif;
 }
 
 h2 {
-    color: var(--font);
+    font-family: 'Encode Sans SC', sans-serif;
     font-size: 2rem;
-    padding: 1.5% 0;
-    font-weight: 600;
+    padding: .5% 1.5%;
+    color: var(--accent2);
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    margin: 0;
+    line-height: 1.4;
 }
 
 h3 {
-    color: var(--font);
-    font-size: 1.1rem;
-    padding-bottom: 10px;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+header a {
+   text-decoration: none;
 }
 
 a, a:hover, a:active, a:focus, a:visited {
-    color: var(--links);
-    text-decoration: none;
+    color: var(--accent);
+    text-decoration: underline;
     cursor: pointer;
     
 }
 
 a:hover, a:active, a:focus {
-    color: var(--light);
-    text-decoration: underline;
+    color: var(--accent-dark);
     transition: all 0.3s ease-in;
 }
 
@@ -95,11 +110,12 @@ nav li:last-child {
     padding-right: 0;
 }
 
-footer p {
+footer {
+    color: var(--light);
     font-size: .9rem;
-    text-align: right;
     margin-top: 2%;
     margin-bottom: 2px;
+    font-weight: 300;
 }
 
 main .decorative-border:last-child {
@@ -107,7 +123,7 @@ main .decorative-border:last-child {
 }
 
 p {
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 article a.arrow-link {
@@ -123,28 +139,33 @@ article a.arrow-link::after{
 
 a.img{
     flex: 1 0 50%;
+    border: 1px solid var(--mid);
+    box-shadow: 0 0.25rem 0.75rem #ccc;
+}
+
+.articles article:first-child a.img{
+    flex: 1 0 30%;
+}
+
+article, article-img{
+    background-color: var(--white);
+    border: 1px solid var(--mid);
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 5%);
+    padding: 1rem;
 }
 
 article img {
     width: 100%;
-    border: 2px solid var(--font);
-    border-radius: 10px;
     cursor: pointer;
 }
 
-/* Class selectors */
-.decorative-border, .articles h3::after {
-    min-height: 1px;
-    background: var(--light);
-background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--accent) 100%)no-repeat center center fixed;
-    background-size: cover;
-    border-radius: 6px;
+footer {
+    text-align: right;
 }
-
+/* Class selectors */
 .articles h3::after{
-    content: '';
     display: block;
-    min-height: 1px;
     margin: 10px 0 0 0;
 }
 
@@ -152,25 +173,22 @@ background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--acc
     color: var(--light);
 }
 
-.about-content p {
-    padding-right: 2%;
-}
-
 .about-content img {
     margin: 0 0 30px 30px;
-    width: 40%;
+    width: 30%;
     height: 50%;
-    border: 2px solid var(--font);
-    border-radius: 10px;
+    border: 1px solid var(--mid);
+    border-radius: calc(.25rem - 1px);
+    box-shadow: 0 0.25rem 0.75rem #ccc;
 }
 
 .article-content {
-    display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
-.article-content, section {
-    padding: 1% 0;
+section {
+    padding: 2% 0;
 }
 
 .article-content p {
@@ -184,43 +202,37 @@ background: linear-gradient(90deg, var(--accent) 0%, var(--light) 50%, var(--acc
 
 .articles article:first-child {
     flex: 1 0 100%;
-    padding-top: 0;
-    padding-bottom: 3%;
+    margin-bottom: 20px;
 }
 
 .articles article:nth-child(n+2) {
-    flex: 1 0 50%;
+    flex: 1 0 calc(50% - 20px);
 }
 
-.articles article:nth-child(2) {
-    padding-right: 10px;
-}
-
-.articles article:nth-child(3) {
-    padding-left: 10px;
+.articles article:nth-child(3){
+    margin-left: 20px;
 }
 
 .contacts {
     justify-content: space-evenly;
-    margin-top: 1%;
 }
 
 .contacts a.button {
     flex: 1 0 calc(25% - 20px);
     font-size: 1.1rem;
+    font-weight: 300;
     padding: 7px;
-    color: var(--font);  
-    background-color: var(--accent-dark);  
-    border: 1px solid var(--font);
-    border-radius: 6px;
+    color: var(--white);  
+    background-color: var(--accent3);  
+    border: 1px solid #ff6c41;
+    border-radius: calc(.25rem - 1px);
     text-decoration: none;
     text-align: center;
 }
 
 .contacts a.button:hover {
-    background-color: var(--font);
-    border-color: var(--accent-dark);
-    color: var(--accent);
+    background-color: var(--accent2);
+    color: var(--white);
     transition: all 0.3s ease-in-out;   
     text-decoration: none;
 }
@@ -247,9 +259,12 @@ a.button, a.button span, a.button svg, a.button {
 .clear-left {
     clear: left;
 }
-
 /* Media queries */
 @media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
     h1{
         font-size: 1.7rem;
     }
@@ -260,24 +275,23 @@ a.button, a.button span, a.button svg, a.button {
 
     nav li {
         text-align: center;
-        padding: 6%;
         margin-top: 5px;
     }
 
-    footer p {
+    footer,  footer p{
         text-align: center;
     }
 
     section {
-        padding-bottom: 3%;
-    }
-
-    h2 {
-        padding-bottom: 30px;
+        padding: 3% 0;
     }
 
     article:nth-child(2) img {
         margin-right: 0;
+    }
+
+    #section-about{
+        margin-top: 50px;
     }
 
     .articles article:first-child{
@@ -309,8 +323,8 @@ a.button, a.button span, a.button svg, a.button {
         padding-right: 0;
     }
 
-    .articles article:nth-child(3) {
-        padding-left: 0;
+    .articles article:nth-child(3){
+        margin-left: 0;
     }
 
     .contacts div {
