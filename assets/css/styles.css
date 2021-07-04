@@ -111,7 +111,7 @@ nav li:last-child {
 }
 
 footer {
-    color: var(--light);
+    color: var(--font);
     font-size: .9rem;
     margin-top: 2%;
     margin-bottom: 2px;
@@ -261,7 +261,7 @@ a.button, a.button span, a.button svg, a.button {
 }
 /* Media queries */
 @media screen and (max-width: 768px) {
-    body {
+    .navbar {
         background-size: cover;
     }
 
